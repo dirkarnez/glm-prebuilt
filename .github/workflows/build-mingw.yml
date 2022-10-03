@@ -39,7 +39,7 @@ jobs:
             ${{ github.workspace }}\cmake-3.24.0-windows-x86_64\bin;^
             gcc --version &&^
             cd glm && cmake.exe -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DGLM_TEST_ENABLE=OFF -DCMAKE_INSTALL_PREFIX="build/${{ env.cmakeInstallationPath }}" -B./build &&^
-            cd build && cmake --build . && cmake --install . && ls
+            cd build && cmake --build . && cmake --install . && dir
             
       - name: Archive Release
         uses: thedoctor0/zip-release@master
